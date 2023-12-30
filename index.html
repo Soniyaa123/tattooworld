@@ -1,154 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tattoo World</title>
-    <link rel="stylesheet" href="input.css">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="input.css" />
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
 
-</head>
-<body>
+  </head>
+  <body class="">
+
+    <header class="bg-white p-5">
+      <nav class="flex justify-between items-center w-[92%]  mx-auto">
+          <div>
+            <img src="tribal.png" alt="Logo" class="w-16">
+          </div>
+          <div class="nav-links duration-500 md:static absolute bg-white md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto  w-full flex items-center px-5">
+              <ul class="flex text-xl md:flex-row flex-col md:items-center md:gap-[4vw] gap-8">
+                  <li>
+                      <a class="hover:text-gray-500" href="#">Home</a>
+                  </li>
+                  <li>
+                      <a class="hover:text-gray-500" href="#about">About</a>
+                  </li>
+                  <li>
+                      <a class="hover:text-gray-500" href="#">Find Us</a>
+                  </li>
+              </ul>
+          </div>
+              <ion-icon onclick="onToggleMenu(this)" name="menu" class="text-3xl cursor-pointer md:hidden"></ion-icon>
+  </header>
 
 
-    
-    <div class="flex items-center" id="home">
 
-        <div class="float-left">
-    <ul class="flex space-x-14 px-14 py-9 text-2xl font-medium">
-        <li class="hover:bg-black hover:text-white hover:p-7 hover:rounded-2xl"><a href="#about">About</a></li>
-        <li class="hover:bg-black hover:text-white hover:p-7 hover:rounded-2xl"><a href="#services">Services</a></li>
-        <li class="hover:bg-black hover:text-white hover:p-7 hover:rounded-2xl"><a href="#find">Find Us</a></li>
 
-    </ul>
+<hr>
+
+<div class="flex flex-col body h-screen items-center justify-center p-7   ">
+<div class="flex flex-col items-center justify-center">
+  <img src="tribal.png" alt="Logo" class="w-32"><br><br>
+<p class="text-center text-6xl font-bold md:text-7xl lg:text-8xl">Welcome to <span class="italic">Tattoo World</span></p><br>
+<p class="text-center text-3xl italic md:text-4xl lg:text-4xl">Where Art Meets Skin</p>
+</div><br>
+
+    <button type="submit" class="bg-black text-white p-4 rounded-xl hover:bg-gray-900 text-xl">
+        Book Your Tattoo
+    </button>
+
+</div>
+<hr>
+
+<div id="about">
+
+  <div class="text-center py-8 text-5xl font-bold">About</div>
+
+  <div class="flex  w-[90%] h-[90%] flex-col space-y-6 px-4 md:px-9 items-center justify-center mx-auto md:flex md:flex-row md:space-x-7 md:items-center md:justify-center md:w-[35%]">
+    <img src="black.jpg" alt="About-1" class="rounded-2xl w-full md:w-1/3 lg:w-full max-w-full">
+    <img src="fine.jpg" alt="About-2" class="rounded-2xl w-full md:w-1/3 lg:w-full max-w-full">
+    <img src="studio.jpg" alt="About-3" class="rounded-2xl w-full md:w-1/3 lg:w-full max-w-full">
 </div>
 
 
-<div class="ml-auto p-12">
-    <a href="mailto:tattooworld@gmail.com">
-
-    <button type="submit" id="submit" class="p-5 bg-black rounded-xl text-white text-lg hover:bg-gray-900">Book Your Tattoo</button>
-</a>
 
 </div>
+  
 
-</div>
+<hr>
 
-    <hr>
+<script>
+  const navLinks = document.querySelector('.nav-links')
+  function onToggleMenu(e){
+      e.name = e.name === 'menu' ? 'close' : 'menu'
+      navLinks.classList.toggle('top-[9%]')
+  }
+</script>
 
-    <div class="flex items-center justify-center h-screen p-16">
-
-        <div class="float-left">
-            <img src="/images/tribal.png" alt="Logo" class="lg:w-28 md:w-24 sm:w-16"><br><br>
-        <p class="text-9xl font-semibold lg:text-9xl md:text-5xl sm:text-4xl">Welcome to <span class="italic text-gray-900">TattooWorld. </span></p><br>
-            <p class="lg:text-4xl md:text-2xl sm:text-xl italic">Where Art Meets Skin</p><br><br>
-            
-            <a href="mailto:tattooworld@gmail.com">
-            <button type="submit" id="submit" class="p-5 bg-black rounded-xl text-white text-lg hover:bg-gray-900">Book Your Tattoo</button>
-            </a>
-        </div>
-
-        <div class="float-right  w-1/2">
-    <img src="images/tattoo.jpg" alt="Tattoo" class=" float-right rounded-full grayscale drop-shadow-2xl hover:grayscale-0 border-gray-200 border-8">
-</div>
-
-    </div>
-    <hr>
-
-    <p class="text-9xl font-bold p-16 text-center" id="about">About</p>
-    <hr>
-
-    <div class="flex p-12 items-center">            
-        <div class="flex-1 p-7">            
-            <img src="/images/studio.jpg" alt="Tattoo Studio" class="w-full rounded-full object-cover grayscale drop-shadow-2xl hover:grayscale-0 border-gray-200 border-8">        
-        </div>            
-        <section class="flex-1 p-9">         
-               
-            <ul class=" pl-5 text-gray-800 space-y-9">
-
-                <div class="bg-white p-8 rounded-lg shadow-md flex items-center space-x-6">
-                    <img src="/images/experience.png" alt="Experience" class="w-12">
-                <li class="mb-2">We are a professional tattoo studio with over 10 years of experience.</li>
-                </div>   
-                
-                <div class="bg-white p-8 rounded-lg shadow-md flex items-center space-x-6">
-                <li class="mb-2">Our artists are skilled in a variety of tattoo styles, including traditional, tribal, and custom designs.</li>   
-                <img src="/images/diversify.png" alt="Experience" class="w-12">
-                </div>
-        
-                <div class="bg-white p-8 rounded-lg shadow-md flex items-center space-x-6">
-                <img src="/images/protection.png" alt="Experience" class="w-12">
-                <li class="mb-2">We prioritize safety and hygiene in our studio, using only high-quality, sterilized equipment.</li> 
-                </div>
-                
-                <div class="bg-white p-8 rounded-lg shadow-md flex items-center space-x-6">
-                <li class="mb-2">We offer a comfortable and welcoming environment for all our clients.</li>
-                <img src="/images/convenient.png" alt="Experience" class="w-12">
-                </div>
-                
-                <div class="bg-white p-8 rounded-lg shadow-md flex items-center space-x-6">
-                <img src="/images/idea.png" alt="Experience" class="w-12">
-                <li class="mb-2 ">We provide free consultations to discuss your tattoo ideas and design preferences.</li>            
-                </div>
-            </ul>        
-        </section>    
-    </div>
-    
-
-    <hr>
-
-
-    <p class="text-9xl font-bold p-16 text-center" id="services">Services</p>
-
-    <div class="flex items-center justify-center">
-
-        <div class="p-12 flex flex-col items-center border" style="height: 800px;">
-            <img src="images/custom.jpg" alt="Tattoo" class="w-full h-full rounded-full object-cover grayscale drop-shadow-2xl hover:grayscale-0 border-gray-200 border-8">
-            <p class="text-4xl italic mt-9">Custom Tattoo</p>
-        </div>
-    
-        <div class="p-12 flex flex-col items-center border" style="height: 800px;">
-            <img src="images/black.jpg" alt="Tattoo" class="w-full h-full rounded-full object-cover grayscale drop-shadow-2xl border-gray-200 border-8">
-            <p class="text-4xl italic mt-9">Black & White Tattoo</p>
-        </div>
-    
-        <div class="p-12 flex flex-col items-center border" style="height: 800px;">
-            <img src="images/fine.jpg" alt="Tattoo" class="w-full h-full rounded-full object-cover grayscale drop-shadow-2xl hover:grayscale-0 border-gray-200 border-8">
-            <p class="text-4xl italic mt-9">Fine Line Tattoo</p>
-        </div>
-    
-    </div>
-    <hr>
-    
-<div class="p-12">
-    <p class=" text-8xl font-bold text-center" id="find">Find Us</p><br>
-
-    <div class="flex items-center justify-center">
-    <a href="https://www.instagram.com/" target="_blank">
-    <div class="p-12 flex items-center space-x-3">
-        <img src="images/instagram.png" alt="Instagram" class="w-16">
-        <p class="text-2xl font-semibold">@Tattoo_World</p>
-    </div>
-</a>
-
-
-<a href="https://www.facebook.com/" target="_blank">
-    <div class="flex items-center space-x-3">
-        <img src="images/social.png" alt="Facebook" class="w-16">
-        <p class="text-2xl font-semibold">Tattoo_World</p>
-    </div>
-</a>
-</div>
-
-</div>
-
-
-<a href="#home">
-<button id="scrollToTop" type="submit" class="fixed bottom-7 right-7 bg-white text-white p-4 rounded-full shadow-2xl">
-    <img src="images/arrow (1).png" alt="Facebook" class="w-16">
-</button>
-</a>
-
-
-</body>
+  </body>
 </html>
